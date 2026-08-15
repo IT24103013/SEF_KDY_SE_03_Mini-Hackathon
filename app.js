@@ -1,9 +1,9 @@
 let bugs = JSON.parse(localStorage.getItem('bugs')) || [
-    {id:1, title:"Login fail", assignee:"Alice", priority:"High", date:"2026-08-20", status:"Backlog"},
-    {id:2, title:"CSS bug", assignee:"Bob", priority:"Low", date:"2026-08-21", status:"Done"},
-    {id:3, title:"Database latency", assignee:"Alice", priority:"High", date:"2026-08-25", status:"Debugging"},
-    {id:4, title:"Logo alignment", assignee:"Charlie", priority:"Medium", date:"2026-08-22", status:"Backlog"},
-    {id:5, title:"Button color", assignee:"Bob", priority:"Low", date:"2026-08-23", status:"Backlog"}
+    {id:1, title:"Login fail", assignee:"Samadhi", priority:"High", date:"2026-08-20", status:"Backlog"},
+    {id:2, title:"CSS bug", assignee:"Shareeka", priority:"Low", date:"2026-08-21", status:"Done"},
+    {id:3, title:"Database latency", assignee:"Thisuni", priority:"High", date:"2026-08-25", status:"Debugging"},
+    {id:4, title:"Logo alignment", assignee:"Sithuli", priority:"Medium", date:"2026-08-22", status:"Backlog"}
+    
 ];
 
 function showView(v) {
