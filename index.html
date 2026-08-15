@@ -1,30 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>BugSquash</title>
     <style>
-        body { font-family: sans-serif; padding: 20px; }
+        body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
         .badge { padding: 4px 8px; border-radius: 4px; font-size: 12px; }
         .High { background: red; color: white; }
         .Medium { background: orange; }
         .Low { background: green; color: white; }
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        nav { margin-bottom: 20px; }
+        input, select { padding: 8px; margin: 5px 0; width: 200px; }
     </style>
 </head>
 <body>
-    <h2>BugSquash Tracker</h2>
-    <div id="nav"><button onclick="showView('list')">All Bugs</button> <button onclick="showView('add')">Report Bug</button></div>
+    <h2>BugSquash: The Startup QA Tool</h2>
+    
+    <nav>
+        <button onclick="showView('list')">All Bugs</button> 
+        <button onclick="showView('add')">Report New Bug</button>
+    </nav>
     
     <div id="list-view">
-        <input id="search" placeholder="Search title..." oninput="render()">
-        <table><thead><tr><th>Title</th><th>Assignee</th><th>Severity</th><th>Due Date</th><th>Status</th><th>Action</th></tr></thead><tbody id="task-body"></tbody></table>
+        <input id="search" placeholder="Search by title..." oninput="render()">
+        <input id="filter-assignee" placeholder="Filter by assignee..." oninput="render()">
+        <table>
+            <thead><tr><th>Title</th><th>Assignee</th><th>Severity</th><th>Due Date</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody id="task-body"></tbody>
+        </table>
     </div>
 
     <div id="add-view" style="display:none">
-        <input id="in-title" placeholder="Bug Title" required><br>
-        <input id="in-assignee" placeholder="Assignee"><br>
-        <select id="in-priority"><option>Low</option><option>Medium</option><option>High</option></select><br>
+        <h3>Add New Bug</h3>
+        <input id="in-title" placeholder="Bug Title (Required)" required><br>
+        <input id="in-assignee" placeholder="Assignee Name"><br>
+        <select id="in-priority">
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+        </select><br>
         <input type="date" id="in-date"><br>
         <button onclick="addBug()">Save Bug</button>
     </div>
