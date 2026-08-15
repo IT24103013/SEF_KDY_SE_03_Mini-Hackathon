@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BugSquash</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .badge { padding: 4px 8px; border-radius: 4px; font-size: 12px; }
+        .High { background: red; color: white; }
+        .Medium { background: orange; }
+        .Low { background: green; color: white; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    </style>
+</head>
+<body>
+    <h2>BugSquash Tracker</h2>
+    <div id="nav"><button onclick="showView('list')">All Bugs</button> <button onclick="showView('add')">Report Bug</button></div>
+    
+    <div id="list-view">
+        <input id="search" placeholder="Search title..." oninput="render()">
+        <table><thead><tr><th>Title</th><th>Assignee</th><th>Severity</th><th>Due Date</th><th>Status</th><th>Action</th></tr></thead><tbody id="task-body"></tbody></table>
+    </div>
+
+    <div id="add-view" style="display:none">
+        <input id="in-title" placeholder="Bug Title" required><br>
+        <input id="in-assignee" placeholder="Assignee"><br>
+        <select id="in-priority"><option>Low</option><option>Medium</option><option>High</option></select><br>
+        <input type="date" id="in-date"><br>
+        <button onclick="addBug()">Save Bug</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
